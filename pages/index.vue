@@ -1,0 +1,261 @@
+<script setup>
+const stack = reactive(['Git', 'TailwindCSS', 'Javascript', 'Vuejs', 'Nuxtjs', 'Django']);
+
+useHead({
+  link: {
+    rel: 'stylesheet',
+    href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css',
+  },
+});
+</script>
+
+<template>
+  <main>
+    <section class="hero-pattern">
+      <div
+        class="container mx-auto flex flex-col items-center px-5 pt-48 pb-24 md:flex-row-reverse"
+      >
+        <div class="mb-10 w-5/6 md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24">
+          <img
+            class="w-full rounded object-cover object-center"
+            alt="hero"
+            src="@/assets/image/hero.png"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
+        >
+          <h2 class="mb-4 text-5xl font-medium text-primary sm:text-6xl">Hi, I'm Rafael</h2>
+          <p class="mb-8 text-xl leading-relaxed text-light">Vue/Nuxt Web Developer</p>
+
+          <div class="flex justify-center">
+            <button
+              class="clay-effect inline-flex rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+            >
+              Contact me!
+            </button>
+            <button
+              class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
+            >
+              See my work
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container mx-auto flex flex-col items-center justify-center gap-8 px-5 py-24 md:flex-row"
+      >
+        <img src="@/assets/image/about.png" class="md:w-1/3" alt="" />
+        <div class="border-b border-gray-200 md:mb-0 md:w-1/2 md:border-b-0 md:py-8">
+          <h2 class="mb-2 text-center text-2xl text-secondary sm:text-3xl md:text-left">
+            Few words about me
+          </h2>
+          <p class="mb-8 text-center text-base leading-relaxed text-light md:text-left">
+            Technology is my passion, I love creating websites and Web Apps and I also enjoy sharing
+            what I just learned with everyone.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-pattern">
+      <div class="container mx-auto px-5 py-24">
+        <div class="mb-20 flex w-full flex-col text-center">
+          <h2 class="mb-4 text-3xl font-medium text-secondary sm:text-4xl">This is my Stack</h2>
+          <p class="mx-auto text-base leading-relaxed text-white lg:w-2/3">
+            Here are the technologies I use most of the time for my projects and I feel more
+            comfortable with.
+          </p>
+        </div>
+        <div
+          class="mx-auto grid w-auto grid-cols-2 place-items-center gap-8 py-12 px-4 md:grid-cols-3"
+        >
+          <div
+            v-for="(technology, index) in stack"
+            :key="index"
+            class="clay-effect flex w-full flex-col items-center gap-4 rounded-3xl bg-primary py-6 md:w-2/3"
+          >
+            <i :class="`devicon-${technology.toLowerCase()}-plain`" class="text-5xl text-light"></i>
+
+            <h3 class="mb-2 text-lg font-medium text-black sm:text-xl">{{ technology }}</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto px-5 py-24">
+        <h2 class="mb-20 text-center text-3xl font-medium text-secondary sm:text-4xl">
+          Here is some of my work
+        </h2>
+
+        <div class="m-4 flex flex-wrap py-6">
+          <div class="p-4 md:w-1/3">
+            <div class="h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="title-font mb-3 text-lg font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+                <div class="flex w-full flex-wrap items-center gap-2">
+                  <a
+                    href="/post.html"
+                    class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
+                    >More info
+                  </a>
+                  <a
+                    href="/post.html"
+                    class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                    >Live demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="title-font mb-3 text-lg font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+                <div class="flex w-full flex-wrap items-center gap-2">
+                  <a
+                    href="/post.html"
+                    class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
+                    >More info
+                  </a>
+                  <a
+                    href="/post.html"
+                    class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                    >Live demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3">
+            <div class="h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="title-font mb-3 text-lg font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+                <div class="flex w-full flex-wrap items-center gap-2">
+                  <a
+                    href="/post.html"
+                    class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
+                    >More info
+                  </a>
+                  <a
+                    href="/post.html"
+                    class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                    >Live demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto px-5 py-24">
+        <h2 class="mb-20 text-center text-3xl font-medium text-secondary sm:text-4xl">
+          My latest blog posts
+        </h2>
+
+        <div class="m-4 flex flex-wrap py-6">
+          <div class="p-4">
+            <div class="flex h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="mb-3 text-2xl font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+
+                <a
+                  href="/post.html"
+                  class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                  >Read more
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="mb-3 text-2xl font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+
+                <a
+                  href="/post.html"
+                  class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                  >Read more
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex h-full overflow-hidden">
+              <img
+                class="rounded-[2.5rem] object-cover object-center p-6 md:h-36 lg:h-48"
+                src="https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker-300x142.gif"
+                alt="blog"
+              />
+              <div class="p-6">
+                <h1 class="mb-3 text-2xl font-medium text-primary">The Catalyzer</h1>
+                <p class="mb-3 leading-relaxed text-white">
+                  Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
+                  tousled waistcoat.
+                </p>
+
+                <a
+                  href="/post.html"
+                  class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+                  >Read more
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</template>
