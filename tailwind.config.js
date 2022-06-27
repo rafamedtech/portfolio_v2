@@ -38,5 +38,5 @@ module.exports = {
     ringOpacity: false,
     shadowOpacity: false,
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

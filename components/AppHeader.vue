@@ -3,7 +3,7 @@
     <div
       class="nav-container container mx-auto flex flex-col flex-wrap items-center p-5 transition-all duration-300 md:flex-row"
     >
-      <a class="mb-4 flex items-center font-medium text-gray-900 md:mb-0">
+      <nuxt-link to="/" class="mb-4 flex items-center font-medium text-gray-900 md:mb-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 512"
@@ -15,13 +15,19 @@
         </svg>
 
         <span class="ml-3 text-3xl text-primary">Rafamed</span>
-      </a>
+      </nuxt-link>
       <nav
         class="relative flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-4 md:border-gray-400 md:py-1 md:pl-4"
       >
-        <nuxt-link to="contact.html" class="mr-5 hover:text-primary">My work</nuxt-link>
-        <nuxt-link to="blog.html" class="mr-5 hover:text-primary">Blog</nuxt-link>
-        <nuxt-link to="contact.html" class="hover:text-primary">Contact</nuxt-link>
+        <nuxt-link :to="{ name: 'projects' }" class="mr-5 text-base hover:text-primary lg:text-lg"
+          >My work</nuxt-link
+        >
+        <nuxt-link :to="{ name: 'blog' }" class="mr-5 text-base hover:text-primary lg:text-lg"
+          >Blog</nuxt-link
+        >
+        <nuxt-link :to="{ name: 'contact' }" class="text-base hover:text-primary lg:text-lg"
+          >Contact</nuxt-link
+        >
       </nav>
       <button
         class="clay-effect mt-4 items-center rounded-lg border-0 bg-accent py-2 px-6 text-base text-black hover:bg-accent/75 focus:outline-none md:mt-0 md:inline-flex"
