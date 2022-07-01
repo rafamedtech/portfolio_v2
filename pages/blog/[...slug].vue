@@ -1,23 +1,18 @@
 <script setup>
 const { path } = useRoute();
-// const { data } = await useAsyncData(`blog/${path}`, () => {
-//   return queryContent().where({ _path: path }).findOne();
-// });
+const { data } = await useAsyncData(`blog/${path}`, () => {
+  return queryContent().where({ _path: path }).findOne();
+});
 
-const post = queryContent(`blog/${path}`).where({ _path: path }).findOne();
-
-// useHead({
-//   title: data.title,
-//   meta: {
-//     description: data.description,
-//     image: data.img,
-//   },
-// });
+useHead({
+  title: data.title,
+  meta: {
+    description: data.description,
+    image: data.img,
+  },
+});
 
 definePageMeta({
-  title: post.title,
-  description: post.description,
-  image: post.img,
   keepalive: true,
 });
 </script>
