@@ -4,12 +4,19 @@ const { data } = await useAsyncData(`blog/${path}`, () => {
   return queryContent().where({ _path: path }).findOne();
 });
 
-useHead({
+// useHead({
+//   title: data.title,
+//   meta: {
+//     description: data.description,
+//     image: data.img,
+//   },
+// });
+
+definePageMeta({
   title: data.title,
-  meta: {
-    description: data.description,
-    image: data.img,
-  },
+  description: data.description,
+  image: data.img,
+  keepalive: true,
 });
 </script>
 
