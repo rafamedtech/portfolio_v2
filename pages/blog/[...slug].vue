@@ -4,7 +4,7 @@ const { path } = useRoute();
 //   return queryContent().where({ _path: path }).findOne();
 // });
 
-const { data } = queryContent(`blog/${path}`).where({ _path: path }).findOne();
+const post = queryContent(`blog/${path}`).where({ _path: path }).findOne();
 
 // useHead({
 //   title: data.title,
@@ -15,9 +15,9 @@ const { data } = queryContent(`blog/${path}`).where({ _path: path }).findOne();
 // });
 
 definePageMeta({
-  title: data.title,
-  description: data.description,
-  image: data.img,
+  title: post.title,
+  description: post.description,
+  image: post.img,
   keepalive: true,
 });
 </script>
