@@ -20,7 +20,9 @@ useHead({
       </h2>
 
       <div class="m-4 flex flex-wrap py-6">
-        <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
+        <keep-alive>
+          <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
+        </keep-alive>
       </div>
     </div>
   </section>
