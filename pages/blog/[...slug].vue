@@ -11,10 +11,6 @@ useHead({
     image: data.img,
   },
 });
-
-definePageMeta({
-  keepalive: true,
-});
 </script>
 
 <template>
