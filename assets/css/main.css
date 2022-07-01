@@ -9,6 +9,10 @@
     @apply bg-custom text-light;
     font-family: 'Source Sans Pro', sans-serif;
   }
+  .prose-pink {
+    --tw-prose-links: rgb(189, 147, 249) !important;
+    --tw-prose-invert-links: #22c55e;
+  }
 }
 
 @layer components {

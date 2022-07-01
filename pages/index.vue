@@ -1,7 +1,17 @@
 <script setup>
 const stack = reactive(['Git', 'TailwindCSS', 'Javascript', 'Vuejs', 'Nuxtjs', 'Django']);
 
+const projects = await queryContent('/projects').find();
+const blogPosts = await queryContent('/blog').sort({ title: 1 }).find();
+
 useHead({
+  title: 'Rafamed - Welcome to my portfolio website',
+  meta: [
+    {
+      name: 'description',
+      content: 'Welcome to my portfolio website',
+    },
+  ],
   link: {
     rel: 'stylesheet',
     href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css',
@@ -30,16 +40,18 @@ useHead({
           <p class="mb-8 text-xl leading-relaxed text-light">Vue/Nuxt Web Developer</p>
 
           <div class="flex justify-center">
-            <button
+            <nuxt-link
+              to="/contact"
               class="clay-effect inline-flex rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
             >
               Contact me!
-            </button>
-            <button
+            </nuxt-link>
+            <nuxt-link
+              to="/projects"
               class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
             >
               See my work
-            </button>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -96,7 +108,7 @@ useHead({
         </h2>
 
         <div class="mt-4 flex flex-wrap pt-6">
-          <ProjectCard v-for="(project, index) in 3" :key="index" />
+          <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
         </div>
       </div>
     </section>
@@ -109,7 +121,7 @@ useHead({
         </h2>
 
         <div class="m-4 flex flex-wrap py-6">
-          <PostCard v-for="(post, index) in 3" :key="index" />
+          <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
         </div>
       </div>
     </section>
@@ -121,11 +133,11 @@ useHead({
           Let's work together!
         </h2>
 
-        <div class="m-4 flex justify-evenly gap-8 py-6">
-          <figure class="w-1/2">
+        <div class="m-4 flex flex-col items-center justify-evenly gap-8 py-6 md:flex-row">
+          <figure class="md:w-1/3">
             <img src="@/assets/image/contact.png" alt="" />
           </figure>
-          <ContactForm class="w-1/3" />
+          <ContactForm class="md:w-2/5" />
         </div>
       </div>
     </section>

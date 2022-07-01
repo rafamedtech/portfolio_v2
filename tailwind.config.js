@@ -38,5 +38,5 @@ module.exports = {
     ringOpacity: false,
     shadowOpacity: false,
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

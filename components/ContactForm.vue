@@ -2,7 +2,11 @@
 
 <template>
   <div>
-    <form class="clay-effect flex flex-col gap-8 rounded-2xl bg-primary p-10 text-black">
+    <form
+      action="https://formsubmit.co/c6f524a15dd2e0cad5dd509cbb4f11ee"
+      method="POST"
+      class="clay-effect flex flex-col gap-8 rounded-2xl bg-primary p-10 text-black"
+    >
       <div class="flex flex-col">
         <label for="name" class="text-black">Name</label>
         <input
@@ -10,6 +14,7 @@
           type="text"
           name="name"
           id="name"
+          required
         />
       </div>
       <div class="flex flex-col">
@@ -19,6 +24,7 @@
           type="email"
           name="email"
           id="email"
+          required
         />
       </div>
       <div class="flex flex-col">
@@ -27,6 +33,7 @@
           class="rounded-lg focus:ring focus:ring-secondary"
           name="message"
           id="message"
+          required
         ></textarea>
       </div>
       <div>

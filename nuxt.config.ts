@@ -6,6 +6,12 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/content'],
 
+  content: {
+    highlight: {
+      theme: 'dracula',
+    },
+  },
+
   build: {
     postcss: {
       postcssOptions: {
