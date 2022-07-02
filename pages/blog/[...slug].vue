@@ -8,7 +8,6 @@ useHead({
   title: data.title,
   meta: {
     description: data.description,
-    image: data.img,
   },
 });
 </script>
