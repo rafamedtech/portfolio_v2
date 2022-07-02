@@ -1,8 +1,9 @@
 <script setup>
 const { path } = useRoute();
-const { data } = await useLazyAsyncData(`blog/${path}`, () => {
+const { data } = await useAsyncData(`blog/${path}`, () => {
   return queryContent().where({ _path: path }).findOne();
 });
+//
 
 useHead({
   title: data.title,
@@ -19,7 +20,7 @@ useHead({
     <!-- <figure>
       <img :src="data.img" alt="" class="clay-effect mx-auto h-1/2 w-full rounded-2xl lg:w-1/2" />
     </figure> -->
-    <!-- <ContentDoc class="container" /> -->
-    <ContentRenderer class="container" :value="data" />
+    <ContentDoc class="container" />
+    <!-- <ContentRenderer class="container" :value="data" /> -->
   </main>
 </template>
