@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   // generate dynamic routes nuxt 3 content v2
   generate: {
-    routes: ['blog', 'blog/:slug'],
+    routes: ['blog', 'blog/how-to-setup-nuxt-3-with-tailwind-css-pinia-and-supabase'],
   },
 
   nitro: {
