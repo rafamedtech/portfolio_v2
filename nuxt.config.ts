@@ -1,12 +1,5 @@
 import { defineNuxtConfig } from 'nuxt';
 
-const routes = await queryContent('/blog').find();
-let dynamicRoutes = () => {
-  return new Promise((resolve) => {
-    resolve(routes.map((el) => `blog/${el.slug}`));
-  });
-};
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
@@ -21,7 +14,7 @@ export default defineNuxtConfig({
 
   // generate dynamic routes nuxt 3 content v2
   generate: {
-    routes: [dynamicRoutes],
+    routes: ['blog', 'blog/:slug'],
   },
 
   nitro: {
