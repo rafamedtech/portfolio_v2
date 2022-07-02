@@ -4,10 +4,12 @@ const { path } = useRoute();
 //   return queryContent().where({ _path: path }).findOne();
 // });
 
-// fetch blog content from content v2 on mounted
-onMounted(async () => {
-  await queryContent().where({ _path: path }).findOne();
-});
+onMounted(() => {
+  const {data} = await useAsyncData(`blog/${path}`, () => {
+    return queryContent().where({ _path: path }).findOne();
+  });
+  return data
+})
 
 useHead({
   title: data.title,
