@@ -1,9 +1,13 @@
 <script setup>
 const { path } = useRoute();
-const { data } = await useAsyncData(`blog/${path}`, () => {
-  return queryContent().where({ _path: path }).findOne();
+// const { data } = await useAsyncData(`blog/${path}`, () => {
+//   return queryContent().where({ _path: path }).findOne();
+// });
+
+// fetch blog content from content v2 on mounted
+onMounted(async () => {
+  await queryContent().where({ _path: path }).findOne();
 });
-//
 
 useHead({
   title: data.title,
