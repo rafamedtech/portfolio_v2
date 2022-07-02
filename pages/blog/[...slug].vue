@@ -4,12 +4,12 @@ const { path } = useRoute();
 //   return queryContent().where({ _path: path }).findOne();
 // });
 
-onMounted(() => {
-  const {data} = await useAsyncData(`blog/${path}`, () => {
+onMounted(async () => {
+  const { data } = await useAsyncData(`blog/${path}`, () => {
     return queryContent().where({ _path: path }).findOne();
   });
-  return data
-})
+  return data;
+});
 
 useHead({
   title: data.title,
