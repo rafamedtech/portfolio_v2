@@ -1,6 +1,6 @@
 <script setup>
 const { path } = useRoute();
-const { data } = await useAsyncData(`blog/${path}`, () => {
+const { data } = await useLazyAsyncData(`blog/${path}`, () => {
   return queryContent().where({ _path: path }).findOne();
 });
 
@@ -11,10 +11,6 @@ useHead({
     image: data.img,
   },
 });
-
-definePageMeta({
-  keepalive: true,
-});
 </script>
 
 <template>
@@ -24,6 +20,7 @@ definePageMeta({
     <figure>
       <img :src="data.img" alt="" class="clay-effect mx-auto h-1/2 w-full rounded-2xl lg:w-1/2" />
     </figure>
-    <ContentDoc class="container" />
+    <!-- <ContentDoc class="container" /> -->
+    <ContentRenderer class="container" :value="data" />
   </main>
 </template>
