@@ -1,13 +1,13 @@
 <script setup>
-// const { data } = await useAsyncData(`blog/${path}`, () => {
-//   return queryContent().where({ _path: path }).findOne();
-// });
-
-const post = ref(null);
-
 const { path } = useRoute();
+const { data } = await useAsyncData(`blog/${path}`, () => {
+  return queryContent().where({ _path: path }).findOne();
+});
+
+const post = reactive({});
+
 onMounted(async () => {
-  post.value = await queryContent().where({ _path: path }).findOne();
+  post.value = await data;
 });
 
 useHead({
