@@ -10,7 +10,7 @@ onMounted(async () => {
   const { data } = await useAsyncData(`blog/${path}`, () => {
     return queryContent().where({ _path: path }).findOne();
   });
-  post.value = data;
+  post = data;
 });
 
 useHead({
