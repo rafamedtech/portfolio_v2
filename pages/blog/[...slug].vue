@@ -11,13 +11,12 @@ onMounted(async () => {
     return queryContent().where({ _path: path }).findOne();
   });
   post = data;
-});
-
-useHead({
-  title: post.title,
-  meta: {
-    description: post.description,
-  },
+  useHead({
+    title: post.title,
+    meta: {
+      description: post.description,
+    },
+  });
 });
 </script>
 
