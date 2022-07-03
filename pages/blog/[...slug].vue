@@ -7,16 +7,14 @@ const post = reactive(null);
 
 const { path } = useRoute();
 onMounted(async () => {
-  const { data } = await useAsyncData(`blog/${path}`, () => {
-    return queryContent().where({ _path: path }).findOne();
-  });
-  post = data;
-  useHead({
-    title: post.title,
-    meta: {
-      description: post.description,
-    },
-  });
+  post.value = await queryContent().where({ _path: path }).findOne();
+});
+
+useHead({
+  title: post.title,
+  meta: {
+    description: post.description,
+  },
 });
 </script>
 
