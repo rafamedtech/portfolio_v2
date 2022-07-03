@@ -3,7 +3,7 @@
 //   return queryContent().where({ _path: path }).findOne();
 // });
 
-const post = reactive(null);
+const post = ref(null);
 
 const { path } = useRoute();
 onMounted(async () => {
