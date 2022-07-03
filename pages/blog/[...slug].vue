@@ -6,8 +6,8 @@ const { data } = await useAsyncData(`blog/${path}`, () => {
 
 const post = reactive({});
 
-onMounted(async () => {
-  post.value = await data;
+onMounted(() => {
+  post.value = data;
 });
 
 useHead({
