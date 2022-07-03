@@ -10,10 +10,6 @@ useHead({
     },
   ],
 });
-
-definePageMeta({
-  keepalive: true,
-});
 </script>
 
 <template>
