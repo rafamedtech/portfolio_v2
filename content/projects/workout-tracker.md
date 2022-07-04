@@ -4,8 +4,12 @@ description: 'This is a full-stack CRUD web application where we can track our w
 source_link: 'https://rafamed.dev/projects/workout-tracker'
 live_link: 'https://workout-tracker-r.netlify.app/'
 tags: ['Nuxt', 'TailwindCSS', 'Django']
-img: 'https://rafamed.dev/wordpress/wp-content/uploads/2022/05/workout-tracker.gif'
+img: 'https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/blog/workout-tracker.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9ibG9nL3dvcmtvdXQtdHJhY2tlci5naWYiLCJpYXQiOjE2NTY5NTg1MDUsImV4cCI6MTk3MjMxODUwNX0.VqOD1Iqhc40G4qReoXYSbZc5_fTsKK9203qdZLnYBKg&t=2022-07-04T18%3A15%3A05.103Z'
 ---
+
+# Workout Tracker
+
+![workout tracker](https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/blog/workout-tracker.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9ibG9nL3dvcmtvdXQtdHJhY2tlci5naWYiLCJpYXQiOjE2NTY5NTg1MDUsImV4cCI6MTk3MjMxODUwNX0.VqOD1Iqhc40G4qReoXYSbZc5_fTsKK9203qdZLnYBKg&t=2022-07-04T18%3A15%3A05.103Z)
 
 This is a full-stack web application created on the front-end with **_Nuxtjs_**, a **_Vuejs_** framework for server-side rendering, and **_Tailwind CSS_** for the styling.
 
