@@ -50,7 +50,7 @@
 
   .project-content img,
   .post-content img {
-    @apply clay-effect mx-auto h-[500px] rounded-2xl;
+    @apply clay-effect mx-auto rounded-2xl md:h-[500px];
   }
 }
 
