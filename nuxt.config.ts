@@ -5,11 +5,11 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
 
   head: {
-    title: 'nuxt-typescript-starter',
+    title: 'Rafamed',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: 'Welcome to my portfolio website' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
