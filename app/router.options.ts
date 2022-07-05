@@ -5,7 +5,7 @@ export default <RouterConfig>{
     return (
       savedPosition ||
       new Promise((resolve) => {
-        setTimeout(() => resolve({ top: 0 }), 100);
+        setTimeout(() => resolve({ top: 0 }), 500);
       })
     );
   },

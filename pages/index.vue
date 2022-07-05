@@ -1,4 +1,6 @@
 <script setup>
+import 'animate.css';
+
 const stack = reactive(['Git', 'TailwindCSS', 'Javascript', 'Vuejs', 'Nuxtjs', 'Django']);
 
 const projects = await queryContent('/projects').find();
@@ -17,6 +19,13 @@ useHead({
     href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css',
   },
 });
+
+definePageMeta({
+  pageTransition: {
+    name: 'fade-index',
+    mode: 'out-in',
+  },
+});
 </script>
 
 <template>
@@ -26,7 +35,9 @@ useHead({
       <div
         class="container mx-auto flex flex-col items-center px-5 pt-48 pb-24 md:flex-row-reverse"
       >
-        <div class="mb-10 w-5/6 md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24">
+        <div
+          class="animate__animated animate__fadeInRight mb-10 w-5/6 md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24"
+        >
           <img
             class="w-full rounded object-cover object-center"
             alt="hero"
@@ -34,7 +45,7 @@ useHead({
           />
         </div>
         <div
-          class="flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
+          class="animate__animated animate__fadeInUp flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
         >
           <h2 class="mb-4 text-5xl font-medium text-primary sm:text-6xl">Hi, I'm Rafael</h2>
           <p class="mb-8 text-xl leading-relaxed text-light">Vue/Nuxt Web Developer</p>
@@ -62,7 +73,7 @@ useHead({
       <div
         class="container mx-auto flex flex-col items-center justify-center gap-8 px-5 py-24 md:flex-row"
       >
-        <img src="@/assets/image/about.png" class="md:w-1/3" alt="" />
+        <img src="@/assets/image/about.png" class="animate-pulse md:w-1/3" alt="" />
         <div class="border-b border-gray-200 md:mb-0 md:w-1/2 md:border-b-0 md:py-8">
           <h2 class="mb-2 text-center text-3xl text-secondary sm:text-4xl md:text-left">
             Few words about me
@@ -79,7 +90,9 @@ useHead({
     <section class="hero-pattern">
       <div class="container mx-auto px-5 py-24">
         <div class="flex w-full flex-col text-center">
-          <h2 class="mb-4 text-3xl font-medium text-secondary sm:text-4xl">This is my Stack</h2>
+          <h2 class="mb-4 animate-pulse text-3xl font-medium text-secondary sm:text-4xl">
+            This is my Stack
+          </h2>
           <p class="mx-auto text-base leading-relaxed text-white lg:w-2/3 xl:text-lg">
             Here are the technologies I use most of the time for my projects.
           </p>
@@ -103,7 +116,7 @@ useHead({
     <!-- Latest work -->
     <section>
       <div class="container mx-auto px-5 py-24">
-        <h2 class="text-center text-3xl font-medium text-secondary sm:text-4xl">
+        <h2 class="animate-pulse text-center text-3xl font-medium text-secondary sm:text-4xl">
           Here is some of my work
         </h2>
 
@@ -116,7 +129,7 @@ useHead({
     <!-- Latest posts -->
     <section>
       <div class="container mx-auto px-5 py-24">
-        <h2 class="text-center text-3xl font-medium text-secondary sm:text-4xl">
+        <h2 class="animate-pulse text-center text-3xl font-medium text-secondary sm:text-4xl">
           My latest blog posts
         </h2>
 
@@ -129,7 +142,7 @@ useHead({
     <!-- Contact section -->
     <section class="hero-pattern">
       <div class="container mx-auto px-5 py-24">
-        <h2 class="pb-4 text-center text-3xl font-medium text-secondary sm:text-4xl">
+        <h2 class="animate-pulse pb-4 text-center text-3xl font-medium text-secondary sm:text-4xl">
           Let's work together!
         </h2>
 

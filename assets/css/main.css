@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-custom text-light;
+    @apply overflow-x-hidden bg-custom text-light;
     font-family: 'Source Sans Pro', sans-serif;
   }
   .prose-pink {
@@ -47,4 +47,47 @@
   .my-shadow {
     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
   }
+
+  .project-content img,
+  .post-content img {
+    @apply clay-effect mx-auto rounded-2xl;
+  }
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.fade-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.fade-index-enter-from {
+  opacity: 0;
+}
+
+.fade-index-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.fade-index-enter-active,
+.fade-index-leave-active {
+  transition: all 0.3s ease-out;
 }

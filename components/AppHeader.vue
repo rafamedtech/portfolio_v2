@@ -1,7 +1,11 @@
+<script setup>
+import 'animate.css';
+</script>
+
 <template>
   <header class="my-shadow fixed z-50 w-screen bg-custom">
     <div
-      class="nav-container container mx-auto flex flex-col flex-wrap items-center p-5 transition-all duration-300 md:flex-row"
+      class="nav-container animate__animated animate__fadeInDown container mx-auto flex flex-col flex-wrap items-center p-5 transition-all duration-300 md:flex-row"
     >
       <nuxt-link to="/" class="mb-4 flex items-center font-medium text-gray-900 md:mb-0">
         <svg
