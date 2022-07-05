@@ -4,17 +4,22 @@ import { defineNuxtConfig } from 'nuxt';
 export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
 
+  head: {
+    title: 'nuxt-typescript-starter',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+
   modules: ['@nuxt/content'],
 
   content: {
     highlight: {
       theme: 'dracula',
     },
-  },
-
-  // generate dynamic routes nuxt 3 content v2
-  generate: {
-    routes: ['blog', 'blog/how-to-setup-nuxt-3-with-tailwind-css-pinia-and-supabase'],
   },
 
   nitro: {
