@@ -4,10 +4,10 @@ description: 'A simple social media application for sharing images with comments
 source_link: 'https://rafamed.dev/projects/instapins'
 live_link: 'https://instapins.herokuapp.com/'
 tags: ['Nuxt', 'Vuex', 'TailwindCSS', 'Django']
-img: 'https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/projects/instapins-tour.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9wcm9qZWN0cy9pbnN0YXBpbnMtdG91ci5naWYiLCJpYXQiOjE2NTg0MjkyNjQsImV4cCI6MTk3Mzc4OTI2NH0.Y3YWj0ujaljRQUp_ByhQXeZEO31sHfdjSy_Ky1TWnw4'
+img: 'https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/projects/instapins-tour.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9wcm9qZWN0cy9pbnN0YXBpbnMtdG91ci5naWYiLCJpYXQiOjE2NTg0Mjk4MjUsImV4cCI6MTk3Mzc4OTgyNX0.K0xoMOTWXSgXC3_wK561Kg5U_5NVYPCcoOH1SrviA1w&t=2022-07-21T18%3A57%3A05.456Z'
 ---
 
-![instapins](https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/projects/instapins-tour.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9wcm9qZWN0cy9pbnN0YXBpbnMtdG91ci5naWYiLCJpYXQiOjE2NTg0MjkyNjQsImV4cCI6MTk3Mzc4OTI2NH0.Y3YWj0ujaljRQUp_ByhQXeZEO31sHfdjSy_Ky1TWnw4)
+![instapins](https://geqogioegammsiznrksj.supabase.co/storage/v1/object/sign/media/projects/instapins-tour.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJtZWRpYS9wcm9qZWN0cy9pbnN0YXBpbnMtdG91ci5naWYiLCJpYXQiOjE2NTg0Mjk4MjUsImV4cCI6MTk3Mzc4OTgyNX0.K0xoMOTWXSgXC3_wK561Kg5U_5NVYPCcoOH1SrviA1w&t=2022-07-21T18%3A57%3A05.456Z)
 
 # Instapins
 
