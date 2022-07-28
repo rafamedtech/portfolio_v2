@@ -33,7 +33,7 @@ definePageMeta({
     <!-- Hero section -->
     <section class="hero-pattern">
       <div
-        class="container mx-auto flex flex-col items-center px-5 pt-40 pb-24 md:flex-row-reverse"
+        class="container mx-auto flex flex-col items-center px-5 pt-48 pb-24 md:flex-row-reverse"
       >
         <div
           class="animate__animated animate__fadeInRight mb-10 w-5/6 md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24"
