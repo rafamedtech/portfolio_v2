@@ -41,7 +41,6 @@ import 'animate.css';
         <a
           href="./assets/resume.pdf"
           class="clay-effect flex items-center rounded-lg border-0 bg-accent py-2 px-2 text-base text-black hover:bg-accent/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
-          download
         >
           Resume
           <svg
