@@ -1,7 +1,7 @@
 <script setup>
 import 'animate.css';
 
-const stack = reactive(['Git', 'TailwindCSS', 'Javascript', 'Vuejs', 'Nuxtjs', 'Django']);
+const stack = reactive(['Git', 'TailwindCSS', 'Jest', 'Vuejs', 'Nuxtjs', 'Django']);
 
 const projects = await queryContent('/projects').find();
 const blogPosts = await queryContent('/blog').sort({ title: 1 }).find();
