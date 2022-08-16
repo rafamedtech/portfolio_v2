@@ -48,7 +48,7 @@ definePageMeta({
           class="animate__animated animate__fadeInUp flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
         >
           <h2 class="mb-4 text-5xl font-medium text-primary sm:text-6xl">Hi, I'm Rafael</h2>
-          <p class="mb-8 text-xl leading-relaxed text-light">Vue/Nuxt Web Developer</p>
+          <p class="mb-8 text-xl leading-relaxed text-light">fullstack Web Developer</p>
 
           <div class="flex justify-center">
             <nuxt-link
