@@ -4,7 +4,7 @@ import 'animate.css';
 const stack = reactive(['Git', 'TailwindCSS', 'Jest', 'Vuejs', 'Nuxtjs', 'Django']);
 
 const projects = await queryContent('/projects').find();
-const blogPosts = await queryContent('/blog').sort({ title: 1 }).find();
+const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
 
 useHead({
   title: 'Rafamed - Welcome to my portfolio website',

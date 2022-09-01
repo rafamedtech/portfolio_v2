@@ -1,5 +1,5 @@
 <script setup>
-const blogPosts = await queryContent('/blog').sort({ title: 1 }).find();
+const blogPosts = await queryContent('/blog').sort({ id: -1 }).find();
 
 useHead({
   title: 'Blog - Rafamed',
