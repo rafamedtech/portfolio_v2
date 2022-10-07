@@ -62,3 +62,9 @@ import 'animate.css';
     </div>
   </header>
 </template>
+
+<style>
+nav a.router-link-exact-active {
+  @apply border-b-2 border-secondary font-bold text-secondary hover:text-secondary;
+}
+</style>

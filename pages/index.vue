@@ -115,7 +115,7 @@ definePageMeta({
 
     <!-- Latest work -->
     <section>
-      <div class="container mx-auto px-5 py-24">
+      <div class="container mx-auto px-5 pt-24">
         <h2 class="animate-pulse text-center text-3xl font-medium text-secondary sm:text-4xl">
           Here is some of my work
         </h2>
