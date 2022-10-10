@@ -19,8 +19,13 @@ definePageMeta({
         <Icon name="heroicons-solid:arrow-left" /> Back to Blog
       </button>
 
-      <ContentDoc class="post-content">
-        <template #not-found>
+      <ContentDoc v-slot="{ doc }" class="post-content">
+        <img :src="doc.img" alt="" />
+        <h1>{{ doc.title }}</h1>
+
+        <ContentRenderer :value="doc" />
+
+        <!-- <template #not-found>
           <div class="grid min-h-[75vh] place-items-center">
             <div class="text-center">
               <h1 class="mt-4">Post not found</h1>
@@ -31,7 +36,7 @@ definePageMeta({
               >
             </div>
           </div>
-        </template>
+        </template> -->
       </ContentDoc>
     </div>
   </main>
