@@ -14,9 +14,9 @@ definePageMeta({
     <div class="container mt-4">
       <button
         @click="$router.push('/blog')"
-        class="clay-effect flex items-center rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
+        class="clay-effect flex items-center gap-2 rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
       >
-        Back
+        <Icon name="heroicons-solid:arrow-left" /> Back to Blog
       </button>
 
       <ContentDoc class="post-content">

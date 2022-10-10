@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt';
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
@@ -14,12 +12,12 @@ export default defineNuxtConfig({
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', 'nuxt-icon'],
 
   content: {
     highlight: {
       theme: 'dracula',
-      preload: ['python', 'javascript', 'css', 'html', 'bash'],
+      preload: ['python', 'javascript', 'css', 'html', 'bash', 'vue'],
     },
   },
 
