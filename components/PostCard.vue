@@ -26,7 +26,7 @@ defineProps({
           :to="{
             path: post._path,
           }"
-          class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
+          class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black no-underline hover:bg-accent/75 focus:outline-none"
           >Read more
         </nuxt-link>
       </div>
