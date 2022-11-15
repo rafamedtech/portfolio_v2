@@ -9,6 +9,25 @@
     @apply overflow-x-hidden bg-custom text-light;
     font-family: 'Source Sans Pro', sans-serif;
   }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
   .prose-pink {
     --tw-prose-links: rgb(189, 147, 249) !important;
     --tw-prose-invert-links: #22c55e;
