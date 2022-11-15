@@ -28,12 +28,14 @@ definePageMeta({
       </button>
 
       <!-- Post content -->
-      <ContentDoc v-slot="{ doc }" class="post-content">
-        <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
-        <h1>{{ doc.title }}</h1>
+      <Suspense>
+        <ContentDoc v-slot="{ doc }" class="post-content">
+          <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
+          <h1>{{ doc.title }}</h1>
 
-        <ContentRenderer :value="doc" />
-      </ContentDoc>
+          <ContentRenderer :value="doc" />
+        </ContentDoc>
+      </Suspense>
     </div>
 
     <!-- Related posts -->
