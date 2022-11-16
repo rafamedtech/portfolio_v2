@@ -50,11 +50,8 @@ definePageMeta({
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
-      <Suspense>
-        <template #default>
-          <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
-        </template>
-      </Suspense>
+
+      <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
     </section>
   </main>
 </template>
