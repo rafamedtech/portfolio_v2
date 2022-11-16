@@ -3,11 +3,11 @@ const { path } = useRoute();
 
 // const currentPost = await queryContent('blog').where({ _path: path }).findOne();
 
-const { data: currentPost } = await useAsyncData(path, () => queryContent('/').findOne());
+const { data: currentPost } = await useAsyncData(path, () => queryContent('/').find());
 
 const { data: similarPosts } = await useAsyncData(`similar-${path}`, () =>
   queryContent('blog')
-    .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
+    .where({ category: currentPost.category[0], _path: { $ne: currentPost[0]._path } })
     .find()
 );
 
