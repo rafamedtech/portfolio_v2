@@ -1,15 +1,16 @@
 <script setup>
 const { path } = useRoute();
 
-// const currentPost = await queryContent('blog').where({ _path: path }).findOne();
+const currentPost = await queryContent('blog').where({ _path: path }).find();
+// console.log(currentPost);
 
-const { data: currentPost } = await useAsyncData(path, () => queryContent('/').find());
+// const { data: currentPost } = await useAsyncData(path, () => queryContent('/').find());
 
-const { data: similarPosts } = await useAsyncData(`similar-${path}`, () =>
-  queryContent('blog')
-    .where({ category: currentPost.category[0], _path: { $ne: currentPost[0]._path } })
-    .find()
-);
+const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
+  return queryContent('blog')
+    .where({ category: currentPost[0].category, _path: { $ne: currentPost[0]._path } })
+    .find();
+});
 
 // const similarPosts = await queryContent('blog')
 //   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
