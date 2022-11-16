@@ -1,5 +1,5 @@
 <script setup>
-// const { path } = useRoute();
+const { path } = useRoute();
 
 const currentPost = await queryContent('blog').where({ _path: path }).findOne();
 
