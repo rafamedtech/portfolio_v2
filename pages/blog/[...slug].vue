@@ -1,7 +1,7 @@
 <script setup>
 // const { path } = useRoute();
 
-// const currentPost = await queryContent('blog').where({ _path: path }).findOne();
+const currentPost = await queryContent('blog').where({ _path: path }).findOne();
 
 // // const { data: currentPost } = await useAsyncData(path, () => queryContent('/').findOne());
 
@@ -11,9 +11,9 @@
 // //     .find()
 // // );
 
-// const similarPosts = await queryContent('blog')
-//   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
-//   .find();
+const similarPosts = await queryContent('blog')
+  .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
+  .find();
 
 definePageMeta({
   pageTransition: {
@@ -36,22 +36,23 @@ definePageMeta({
       </button>
 
       <!-- Post content -->
-      <Suspense>
-        <ContentDoc v-slot="{ doc }" class="post-content">
-          <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
-          <h1>{{ doc.title }}</h1>
 
-          <ContentRenderer :value="doc" />
-        </ContentDoc>
-      </Suspense>
+      <ContentDoc v-slot="{ doc }" class="post-content">
+        <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
+        <h1>{{ doc.title }}</h1>
+
+        <ContentRenderer :value="doc" />
+      </ContentDoc>
     </div>
 
     <!-- Related posts -->
-    <!-- <section class="container">
+    <section class="container">
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
-      <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
-    </section> -->
+      <Suspense>
+        <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
+      </Suspense>
+    </section>
   </main>
 </template>
