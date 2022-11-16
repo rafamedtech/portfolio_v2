@@ -5,7 +5,7 @@ const { path } = useRoute();
 
 const { data: currentPost } = await useAsyncData(path, () => queryContent('/').findOne());
 
-const { data: similarPosts } = await useAsyncData(path, () =>
+const { data: similarPosts } = await useAsyncData(`similar-${path}`, () =>
   queryContent('blog')
     .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
     .find()
