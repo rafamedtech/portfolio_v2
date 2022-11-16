@@ -51,7 +51,9 @@ definePageMeta({
         Related posts
       </h2>
       <Suspense>
-        <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
+        <template #default>
+          <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
+        </template>
       </Suspense>
     </section>
   </main>
