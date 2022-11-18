@@ -63,9 +63,9 @@ definePageMeta({
         Related posts
       </h2>
 
-      <!-- <ClientOnly> -->
-      <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
-      <!-- </ClientOnly> -->
+      <ClientOnly>
+        <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
+      </ClientOnly>
     </section>
   </main>
 </template>
