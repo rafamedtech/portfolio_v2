@@ -7,8 +7,11 @@ const { path } = useRoute();
 //   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
 //   .find();
 
-const { data: currentPost } = await useAsyncData(path, () =>
-  queryContent('blog').where({ _path: path }).findOne()
+const { data: currentPost } = await useAsyncData(
+  path,
+  () => queryContent('blog').where({ _path: path }).findOne()
+
+  // const currentPost = await queryContent('blog').where({ _path: path }).find();
 );
 // console.log(currentPost);
 
@@ -17,6 +20,10 @@ const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
     .where({ category: currentPost.value.category, _path: { $ne: currentPost.value._path } })
     .find();
 });
+
+// const similarPosts = await queryContent('blog')
+//   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
+//   .find();
 
 definePageMeta({
   pageTransition: {
@@ -43,6 +50,7 @@ definePageMeta({
       <ContentDoc v-slot="{ doc }" class="post-content">
         <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
         <h1>{{ doc.title }}</h1>
+
         <ClientOnly>
           <ContentRenderer :value="doc" />
         </ClientOnly>
@@ -54,6 +62,7 @@ definePageMeta({
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
+
       <!-- <ClientOnly> -->
       <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
       <!-- </ClientOnly> -->
