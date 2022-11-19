@@ -1,34 +1,10 @@
 <script setup>
-// const { path } = useRoute();
 const { params } = useRoute();
-// console.log(params);
 
 const currentPost = await queryContent('blog').where({ slug: params.slug[0] }).findOne();
-// console.log(currentPost);
-
 const similarPosts = await queryContent('blog')
   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
   .find();
-
-// const { data: currentPost } = await useAsyncData(
-//   path,
-//   () => queryContent('blog').where({ _path: path }).findOne()
-
-// );
-// console.log(currentPost.value._path);
-
-// const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
-//   return queryContent('blog')
-//     .where({ category: currentPost.value.category, slug: { $ne: currentPost.value.slug } })
-//     .find();
-
-// });
-
-// console.log(similarPosts);
-
-// const similarPosts = await queryContent('blog')
-//   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
-//   .find();
 
 definePageMeta({
   pageTransition: {
@@ -56,9 +32,7 @@ definePageMeta({
         <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
         <h1>{{ doc.title }}</h1>
 
-        <ClientOnly>
-          <ContentRenderer :value="doc" />
-        </ClientOnly>
+        <ContentRenderer :value="doc" />
       </ContentDoc>
     </div>
 
