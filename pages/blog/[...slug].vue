@@ -1,26 +1,25 @@
 <script setup>
 const { path } = useRoute();
 
-// const currentPost = await queryContent('blog').where({ _path: path }).findOne();
+const currentPost = await queryContent('blog').where({ _path: path }).findOne();
 
-// const similarPosts = await queryContent('blog')
-//   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
-//   .find();
+const similarPosts = await queryContent('blog')
+  .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
+  .find();
 
-const { data: currentPost } = await useAsyncData(
-  path,
-  () => queryContent('blog').where({ _path: path }).findOne()
+// const { data: currentPost } = await useAsyncData(
+//   path,
+//   () => queryContent('blog').where({ _path: path }).findOne()
 
-  // const currentPost = await queryContent('blog').where({ _path: path }).find();
-);
+// );
 // console.log(currentPost.value._path);
 
-const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
-  return queryContent('blog')
-    .where({ category: currentPost.value.category, slug: { $ne: currentPost.value.slug } })
-    .find();
-  // .where({ category: currentPost.value.category, _path: { $ne: `${currentPost.value._path}/` } })
-});
+// const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
+//   return queryContent('blog')
+//     .where({ category: currentPost.value.category, slug: { $ne: currentPost.value.slug } })
+//     .find();
+
+// });
 
 // console.log(similarPosts);
 
@@ -66,9 +65,7 @@ definePageMeta({
         Related posts
       </h2>
 
-      <Suspense>
-        <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
-      </Suspense>
+      <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
     </section>
   </main>
 </template>
