@@ -13,12 +13,16 @@ const { data: currentPost } = await useAsyncData(
 
   // const currentPost = await queryContent('blog').where({ _path: path }).find();
 );
-console.log(currentPost.value._path);
+// console.log(currentPost.value._path);
 
 const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
-  return queryContent('blog').where({ category: currentPost.value.category }).find();
+  return queryContent('blog')
+    .where({ category: currentPost.value.category, slug: { $ne: currentPost.value.slug } })
+    .find();
   // .where({ category: currentPost.value.category, _path: { $ne: `${currentPost.value._path}/` } })
 });
+
+// console.log(similarPosts);
 
 // const similarPosts = await queryContent('blog')
 //   .where({ category: currentPost.category, _path: { $ne: currentPost._path } })
