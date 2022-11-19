@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  htmlAttrs: { lang: 'es' },
+  htmlAttrs: { lang: 'en' },
 });
 </script>
 
