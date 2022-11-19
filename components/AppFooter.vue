@@ -27,7 +27,7 @@
         >
       </p>
       <span class="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start">
-        <nuxt-link to="https://twitter.com/rafamed_dev" class="ml-3 text-secondary">
+        <nuxt-link to="https://twitter.com/rafamed_dev" class="ml-3 text-secondary" title="Twitter">
           <svg
             fill="currentColor"
             stroke-linecap="round"
@@ -41,7 +41,12 @@
             ></path>
           </svg>
         </nuxt-link>
-        <nuxt-link to="https://github.com/rafamedtech/" target="_blank" class="ml-3 text-secondary">
+        <nuxt-link
+          to="https://github.com/rafamedtech/"
+          target="_blank"
+          class="ml-3 text-secondary"
+          title="Github"
+        >
           <svg
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +65,7 @@
           to="https://www.linkedin.com/in/rafael-amed-valenzuela/"
           target="_blank"
           class="ml-3 text-secondary"
+          title="LinkedIn"
         >
           <svg
             fill="currentColor"

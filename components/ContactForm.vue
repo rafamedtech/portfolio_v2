@@ -3,10 +3,10 @@
     <form
       action="https://formsubmit.co/c6f524a15dd2e0cad5dd509cbb4f11ee"
       method="POST"
-      class="clay-effect flex flex-col gap-8 rounded-2xl bg-primary p-10 text-black"
+      class="clay-effect flex flex-col gap-8 rounded-2xl bg-custom p-10 text-black"
     >
       <div class="flex flex-col">
-        <label for="name" class="text-black">Name</label>
+        <label for="name" class="text-primary">Name</label>
         <input
           class="rounded-lg focus:ring focus:ring-secondary"
           type="text"
@@ -16,7 +16,7 @@
         />
       </div>
       <div class="flex flex-col">
-        <label for="email" class="text-black">Email</label>
+        <label for="email" class="text-primary">Email</label>
         <input
           class="rounded-lg focus:ring focus:ring-secondary"
           type="email"
@@ -26,7 +26,7 @@
         />
       </div>
       <div class="flex flex-col">
-        <label for="message" class="text-black">Message</label>
+        <label for="message" class="text-primary">Message</label>
         <textarea
           class="rounded-lg focus:ring focus:ring-secondary"
           name="message"
