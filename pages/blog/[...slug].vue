@@ -17,7 +17,7 @@ const { data: currentPost } = await useAsyncData(
 
 const { data: similarPosts } = await useAsyncData(`similar-${path}`, () => {
   return queryContent('blog')
-    .where({ category: currentPost.value.category, _path: { $ne: currentPost.value._path } })
+    .where({ category: currentPost.value.category, _path: { $ne: `${currentPost.value._path}/` } })
     .find();
 });
 
