@@ -1,8 +1,10 @@
 <script setup>
-const { path } = useRoute();
-console.log(path);
+// const { path } = useRoute();
+const { params } = useRoute();
+// console.log(params);
 
-const currentPost = await queryContent('blog').where({ _path: path }).findOne();
+const currentPost = await queryContent('blog').where({ slug: params.slug[0] }).findOne();
+// console.log(currentPost);
 
 const similarPosts = await queryContent('blog')
   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
