@@ -69,7 +69,7 @@
 
   .project-content img,
   .post-content img {
-    @apply mx-auto rounded-2xl md:h-[500px];
+    /* @apply mx-auto rounded-2xl md:h-[500px]; */
   }
 }
 

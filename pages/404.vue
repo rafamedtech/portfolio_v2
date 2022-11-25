@@ -1,5 +1,5 @@
 <template>
-  <div class="grid min-h-[75vh] place-items-center">
+  <NuxtLayout>
     <div class="text-center">
       <h1 class="my-4">Post not found</h1>
       <nuxt-link
@@ -8,5 +8,5 @@
         >Back to Home</nuxt-link
       >
     </div>
-  </div>
+  </NuxtLayout>
 </template>

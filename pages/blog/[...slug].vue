@@ -29,15 +29,26 @@ definePageMeta({
       <!-- Post content -->
 
       <ContentDoc v-slot="{ doc }" class="post-content">
-        <img :src="doc.img" alt="" class="mx-auto rounded-2xl md:h-[500px]" />
+        <img
+          :src="doc.img"
+          alt=""
+          class="mx-auto rounded-2xl"
+          :class="{ 'md:h-[500px]': doc.img }"
+        />
         <h1>{{ doc.title }}</h1>
 
-        <ContentRenderer :value="doc" />
+        <ContentRendererMarkdown :value="doc">
+          <template #empty>
+            <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+            <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
+            <h1 class="font-base text-center">Post not found</h1>
+          </template>
+        </ContentRendererMarkdown>
       </ContentDoc>
     </div>
 
     <!-- Related posts -->
-    <section class="container">
+    <section v-if="currentPost.title" class="container">
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
