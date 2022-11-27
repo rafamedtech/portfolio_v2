@@ -36,6 +36,13 @@ definePageMeta({
           :class="{ 'md:h-[500px]': doc.img }"
         />
         <h1>{{ doc.title }}</h1>
+        <!-- <h4>Table of contents</h4>
+        <ul class="w-fit rounded-2xl bg-[#282a36] p-4">
+          <li v-for="link in doc.body.toc.links" class="list-none">
+            <a :href="`#${link.id}`">{{ link.text }}</a>
+          </li>
+        </ul> -->
+        <!-- <p>{{ doc.body.toc.links[0] }}</p> -->
 
         <ContentRendererMarkdown :value="doc">
           <template #empty>
