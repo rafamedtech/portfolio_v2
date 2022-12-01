@@ -1,14 +1,18 @@
-<script setup>
+<script lang="ts" setup>
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 const { params } = useRoute();
 
-const currentPost = await queryContent('blog').where({ slug: params.slug[0] }).findOne();
-const similarPosts = await queryContent('blog')
+const currentPost = await queryContent<ParsedContent>('blog')
+  .where({ slug: params.slug[0] })
+  .findOne();
+
+const similarPosts = await queryContent<ParsedContent>('blog')
   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
   .find();
 
 if (!currentPost) {
   createError({
-    statusCode: '404',
+    statusCode: 404,
     message: 'Page not found',
   });
 }
