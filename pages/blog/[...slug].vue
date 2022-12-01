@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-const { params } = useRoute();
 
+const { params } = useRoute();
 const currentPost = await queryContent<ParsedContent>('blog')
   .where({ slug: params.slug[0] })
   .findOne();
-
 const similarPosts = await queryContent<ParsedContent>('blog')
   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
   .find();
