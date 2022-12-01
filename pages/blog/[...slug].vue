@@ -6,6 +6,13 @@ const similarPosts = await queryContent('blog')
   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
   .find();
 
+if (!currentPost) {
+  createError({
+    statusCode: '404',
+    message: 'Page not found',
+  });
+}
+
 definePageMeta({
   pageTransition: {
     name: 'fade',
