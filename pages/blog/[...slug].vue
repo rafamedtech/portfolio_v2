@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+import type { RouteLocationNormalized } from 'vue-router';
 
 // Similar posts
 const { params } = useRoute();
@@ -12,27 +13,18 @@ const similarPosts = data.value?.filter(
     post.category === currentPost?.category && post.slug !== currentPost?.slug
 );
 
-// console.log(similarPosts);
-
-// const currentPost = await queryContent<ParsedContent>('blog')
-//   .where({ slug: params.slug[0] })
-//   .findOne();
-// const similarPosts = await queryContent<ParsedContent>('blog')
-//   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
-//   .find();
-
-if (error.value) {
-  abortNavigation(
-    createError({
-      statusCode: 404,
-      message: 'Page not found',
-    })
-  );
-}
+// if (error.value) {
+//   abortNavigation(
+//     createError({
+//       statusCode: 404,
+//       message: 'Page not found',
+//     })
+//   );
+// }
 
 definePageMeta({
   middleware: [
-    async function ({ params }, from) {
+    async function ({ params }: RouteLocationNormalized, from: RouteLocationNormalized) {
       const { data } = await useAsyncData(params.slug[0], () =>
         queryContent<ParsedContent>('blog').find()
       );
@@ -84,18 +76,14 @@ definePageMeta({
         </ul> -->
         <!-- <p>{{ doc.body.toc.links[0] }}</p> -->
 
-        <ContentRendererMarkdown :value="doc">
-          <template #empty>
-            <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-            <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
+        <ContentRendererMarkdown :value="doc" />
+        <!-- <ContentRendererMarkdown :value="doc">
+          <template #empty> -->
+        <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+        <!-- <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
             <h1 class="font-base text-center">Post not found</h1>
           </template>
-        </ContentRendererMarkdown>
-        <template>
-          <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-          <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
-          <h1 class="font-base text-center">Post not found</h1>
-        </template>
+        </ContentRendererMarkdown> -->
       </ContentDoc>
     </div>
 
