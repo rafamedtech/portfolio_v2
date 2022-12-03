@@ -31,6 +31,22 @@ if (error.value) {
 }
 
 definePageMeta({
+  middleware: [
+    async function ({ params }, from) {
+      const { data } = await useAsyncData(params.slug[0], () =>
+        queryContent<ParsedContent>('blog').find()
+      );
+      const currentPost = data.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
+      if (!currentPost) {
+        return abortNavigation(
+          createError({
+            statusCode: 404,
+            message: 'Page not found',
+          })
+        );
+      }
+    },
+  ],
   pageTransition: {
     name: 'fade',
     mode: 'out-in',
@@ -75,6 +91,11 @@ definePageMeta({
             <h1 class="font-base text-center">Post not found</h1>
           </template>
         </ContentRendererMarkdown>
+        <template>
+          <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+          <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
+          <h1 class="font-base text-center">Post not found</h1>
+        </template>
       </ContentDoc>
     </div>
 
