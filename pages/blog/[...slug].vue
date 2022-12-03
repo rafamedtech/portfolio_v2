@@ -1,26 +1,17 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import type { RouteLocationNormalized } from 'vue-router';
+import type { RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router';
 
 // Similar posts
-const { params } = useRoute();
-const { data, error } = await useAsyncData(params.slug[0], () =>
+const { params }: RouteLocationNormalizedLoaded = useRoute();
+const { data: posts } = await useAsyncData(params.slug[0], () =>
   queryContent<ParsedContent>('blog').find()
 );
-const currentPost = data.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
-const similarPosts = data.value?.filter(
+const currentPost = posts.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
+const similarPosts = posts.value?.filter(
   (post: ParsedContent) =>
     post.category === currentPost?.category && post.slug !== currentPost?.slug
 );
-
-// if (error.value) {
-//   abortNavigation(
-//     createError({
-//       statusCode: 404,
-//       message: 'Page not found',
-//     })
-//   );
-// }
 
 definePageMeta({
   middleware: [
@@ -33,7 +24,7 @@ definePageMeta({
         return abortNavigation(
           createError({
             statusCode: 404,
-            message: 'Page not found',
+            message: 'Post not found',
           })
         );
       }
@@ -59,7 +50,6 @@ definePageMeta({
       </button>
 
       <!-- Post content -->
-
       <ContentDoc v-slot="{ doc }" class="post-content">
         <img
           :src="doc.img"
@@ -68,22 +58,8 @@ definePageMeta({
           :class="{ 'md:h-[500px]': doc.img }"
         />
         <h1>{{ doc.title }}</h1>
-        <!-- <h4>Table of contents</h4>
-        <ul class="w-fit rounded-2xl bg-[#282a36] p-4">
-          <li v-for="link in doc.body.toc.links" class="list-none">
-            <a :href="`#${link.id}`">{{ link.text }}</a>
-          </li>
-        </ul> -->
-        <!-- <p>{{ doc.body.toc.links[0] }}</p> -->
 
         <ContentRendererMarkdown :value="doc" />
-        <!-- <ContentRendererMarkdown :value="doc">
-          <template #empty> -->
-        <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-        <!-- <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
-            <h1 class="font-base text-center">Post not found</h1>
-          </template>
-        </ContentRendererMarkdown> -->
       </ContentDoc>
     </div>
 
