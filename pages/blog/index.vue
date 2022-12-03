@@ -1,5 +1,7 @@
-<script setup>
-const blogPosts = await queryContent('/blog').sort({ id: -1 }).find();
+<script lang="ts" setup>
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+
+const blogPosts = await queryContent<ParsedContent>('/blog').sort({ id: -1 }).find();
 
 useHead({
   title: 'Blog - Rafamed',

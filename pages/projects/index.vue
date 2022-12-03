@@ -1,5 +1,7 @@
-<script setup>
-const projects = await queryContent('/projects').find();
+<script lang="ts" setup>
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+
+const projects = await queryContent<ParsedContent>('/projects').find();
 
 useHead({
   title: 'My Work - Rafamed',

@@ -1,10 +1,19 @@
-<script setup>
+<script lang="ts" setup>
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import 'animate.css';
 
-const stack = reactive(['Git', 'TailwindCSS', 'Jest', 'Vuejs', 'Nuxtjs', 'Django']);
+const stack = reactive<string[]>([
+  'Git',
+  'TailwindCSS',
+  'Jest',
+  'Typescript',
+  'Vuejs',
+  'Nuxtjs',
+  'Django',
+]);
 
-const projects = await queryContent('/projects').find();
-const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
+const projects = await queryContent<ParsedContent>('/projects').find();
+const blogPosts = await queryContent<ParsedContent>('/blog').limit(3).sort({ id: -1 }).find();
 
 useHead({
   title: 'Rafamed - Welcome to my portfolio website',
@@ -14,10 +23,12 @@ useHead({
       content: 'Welcome to my portfolio website',
     },
   ],
-  link: {
-    rel: 'stylesheet',
-    href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css',
-  },
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css',
+    },
+  ],
 });
 
 definePageMeta({

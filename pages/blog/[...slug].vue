@@ -1,19 +1,33 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
+// Similar posts
 const { params } = useRoute();
-const currentPost = await queryContent<ParsedContent>('blog')
-  .where({ slug: params.slug[0] })
-  .findOne();
-const similarPosts = await queryContent<ParsedContent>('blog')
-  .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
-  .find();
+const { data, error } = await useAsyncData(params.slug[0], () =>
+  queryContent<ParsedContent>('blog').find()
+);
+const currentPost = data.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
+const similarPosts = data.value?.filter(
+  (post: ParsedContent) =>
+    post.category === currentPost?.category && post.slug !== currentPost?.slug
+);
 
-if (!currentPost) {
-  createError({
-    statusCode: 404,
-    message: 'Page not found',
-  });
+// console.log(similarPosts);
+
+// const currentPost = await queryContent<ParsedContent>('blog')
+//   .where({ slug: params.slug[0] })
+//   .findOne();
+// const similarPosts = await queryContent<ParsedContent>('blog')
+//   .where({ category: currentPost.category, slug: { $ne: currentPost.slug } })
+//   .find();
+
+if (error.value) {
+  abortNavigation(
+    createError({
+      statusCode: 404,
+      message: 'Page not found',
+    })
+  );
 }
 
 definePageMeta({
@@ -55,17 +69,17 @@ definePageMeta({
         <!-- <p>{{ doc.body.toc.links[0] }}</p> -->
 
         <ContentRendererMarkdown :value="doc">
-          <template #empty>
-            <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-            <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
+          <!-- <template #empty> -->
+          <!-- <a href="https://www.freepik.com/free-vector/404-error-with-person-looking-concept-illustration_20824303.htm#query=not%20found&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+          <!-- <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
             <h1 class="font-base text-center">Post not found</h1>
-          </template>
+          </template> -->
         </ContentRendererMarkdown>
       </ContentDoc>
     </div>
 
     <!-- Related posts -->
-    <section v-if="currentPost.title" class="container">
+    <section class="container">
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
