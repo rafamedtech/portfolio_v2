@@ -21,7 +21,7 @@ definePageMeta({
     >
       <button
         @click="$router.push('/blog')"
-        class="clay-effect flex items-center gap-2 rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
+        class="flex items-center gap-2 rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
       >
         <Icon name="heroicons-solid:arrow-left" /> Back to Blog
       </button>
@@ -54,7 +54,7 @@ definePageMeta({
     </div>
 
     <!-- Related posts -->
-    <section v-if="similarPosts" class="container">
+    <section v-if="similarPosts?.length" class="container">
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
