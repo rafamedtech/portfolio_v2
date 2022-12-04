@@ -3,33 +3,29 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 import type { RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router';
 
 // Similar posts
-const { params }: RouteLocationNormalizedLoaded = useRoute();
-const { data: posts } = await useAsyncData(params.slug[0], () =>
-  queryContent<ParsedContent>('blog').find()
-);
-const currentPost = posts.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
-const similarPosts = posts.value?.filter(
-  (post: ParsedContent) =>
-    post.category === currentPost?.category && post.slug !== currentPost?.slug
-);
+const route: RouteLocationNormalizedLoaded = useRoute();
+const { similarPosts } = await usePost(route);
 
 definePageMeta({
-  middleware: [
-    async function ({ params }: RouteLocationNormalized, from: RouteLocationNormalized) {
-      const { data } = await useAsyncData(params.slug[0], () =>
-        queryContent<ParsedContent>('blog').find()
-      );
-      const currentPost = data.value?.find((post: ParsedContent) => post.slug === params.slug[0]);
-      if (!currentPost) {
-        return abortNavigation(
-          createError({
-            statusCode: 404,
-            message: 'Post not found',
-          })
-        );
-      }
-    },
-  ],
+  // Redirect to 404 if post not found
+  // middleware: [
+  //   async function ({ params }: RouteLocationNormalized, from: RouteLocationNormalized) {
+  //     const posts = await queryContent<ParsedContent>('blog').find();
+
+  //     const currentPost = computed(() =>
+  //       posts.find((post: ParsedContent) => post.slug === params.slug[0])
+  //     );
+
+  //     if (!currentPost.value) {
+  //       return abortNavigation(
+  //         createError({
+  //           statusCode: 404,
+  //           message: 'Post not found',
+  //         })
+  //       );
+  //     }
+  //   },
+  // ],
   pageTransition: {
     name: 'fade',
     mode: 'out-in',
