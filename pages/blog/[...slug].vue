@@ -54,7 +54,7 @@ definePageMeta({
     </div>
 
     <!-- Related posts -->
-    <section class="container">
+    <section v-if="similarPosts" class="container">
       <h2 class="mb-0 text-center text-3xl font-medium text-secondary sm:text-4xl">
         Related posts
       </h2>
