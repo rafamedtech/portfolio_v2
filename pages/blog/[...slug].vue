@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import type { RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router';
+import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
 // Similar posts
 const route: RouteLocationNormalizedLoaded = useRoute();
@@ -46,16 +46,21 @@ definePageMeta({
       </button>
 
       <!-- Post content -->
-      <ContentDoc v-slot="{ doc }" class="post-content">
-        <img
-          :src="doc.img"
-          alt=""
-          class="mx-auto rounded-2xl"
-          :class="{ 'md:h-[500px]': doc.img }"
-        />
-        <h1>{{ doc.title }}</h1>
+      <ContentDoc class="post-content">
+        <template v-slot="{ doc }">
+          <img
+            :src="doc.img"
+            alt=""
+            class="mx-auto rounded-2xl"
+            :class="{ 'md:h-[500px]': doc.img }"
+          />
+          <h1>{{ doc.title }}</h1>
 
-        <ContentRendererMarkdown :value="doc" />
+          <ContentRendererMarkdown :value="doc" />
+        </template>
+        <template v-slot:not-found>
+          <h1>post not found test</h1>
+        </template>
       </ContentDoc>
     </div>
 
