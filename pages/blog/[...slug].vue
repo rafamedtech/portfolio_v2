@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import type { RouteLocationNormalizedLoaded } from 'vue-router';
+// console.log(slug[0].toString());
+
+// const route = useRoute();
 
 // Similar posts
-const route: RouteLocationNormalizedLoaded = useRoute();
-const { similarPosts } = await usePost(route);
+const { currentPost, similarPosts } = await usePost();
+// console.log(posts);
+
+// const currentPost = posts.find((post: ParsedContent) => post.slug === slug[0]);
+
+console.log(currentPost);
+// console.log(route.params);
 
 definePageMeta({
   pageTransition: {
@@ -23,10 +29,11 @@ definePageMeta({
         @click="$router.push('/blog')"
         class="flex items-center gap-2 rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
       >
-        <Icon name="heroicons-solid:arrow-left" /> Back to Blog
+        <Icon name="arrow-left" /> Back to Blog
       </button>
 
       <!-- Post content -->
+
       <ContentDoc class="post-content">
         <template v-slot="{ doc }">
           <img
@@ -41,7 +48,7 @@ definePageMeta({
         </template>
         <template #not-found>
           <div class="hero-pattern grid min-h-[75vh] place-items-center">
-            <img src="@/assets/image/notfound.png" alt="" class="mx-auto h-[500px]" />
+            <img src="@/static/notfound.png" alt="" class="mx-auto h-[500px]" />
             <h1 class="font-base mb-4 text-center text-3xl text-secondary">Post not found</h1>
             <NuxtLink
               to="/"
@@ -59,7 +66,7 @@ definePageMeta({
         Related posts
       </h2>
 
-      <PostCard v-for="post in similarPosts" :post="post" :key="post._path" />
+      <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />
     </section>
   </main>
 </template>

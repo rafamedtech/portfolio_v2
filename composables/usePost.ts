@@ -1,19 +1,18 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import type { RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router';
 
-export const usePost = async ({
-  params,
-}: RouteLocationNormalized | RouteLocationNormalizedLoaded) => {
-  const { data: posts } = await useAsyncData(params.slug[0], () =>
-    queryContent<ParsedContent>('blog').find()
-  );
+export const usePost = async () => {
+  const { slug } = useRoute().params;
+  // const posts = ref<ParsedContent[]>([]);
+  // const { data: posts } = await useAsyncData('allPosts', () =>
+  //   queryContent<ParsedContent>('blog').sort({ id: -1 }).find()
+  // );
 
-  const currentPost = computed(() =>
-    posts.value?.find((post: ParsedContent) => post.slug === params.slug[0])
-  );
+  const posts = await queryContent<ParsedContent>('blog').sort({ id: -1 }).find();
+
+  const currentPost = computed(() => posts.find((post: ParsedContent) => post.slug === slug[0]));
 
   const similarPosts = computed(() =>
-    posts.value?.filter(
+    posts.filter(
       (post: ParsedContent) =>
         post.category === currentPost.value?.category && post.slug !== currentPost.value?.slug
     )

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-
-const blogPosts = await queryContent<ParsedContent>('/blog').sort({ id: -1 }).find();
+// All posts
+const { posts } = await usePost();
 
 useHead({
   title: 'Blog - Rafamed',
@@ -29,7 +28,7 @@ definePageMeta({
       </h2>
 
       <div class="m-4 flex flex-wrap py-6">
-        <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
+        <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
       </div>
     </div>
   </section>

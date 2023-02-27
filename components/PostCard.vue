@@ -1,10 +1,9 @@
-<script setup>
-defineProps({
-  post: {
-    type: Object,
-    required: true,
-  },
-});
+<script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+
+defineProps<{
+  post: ParsedContent;
+}>();
 </script>
 
 <template>
@@ -14,7 +13,7 @@ defineProps({
         <img
           class="clay-effect h-60 w-full rounded-[2.5rem] object-cover object-center p-4"
           :src="post.img"
-          alt="blog"
+          :alt="post.title"
         />
       </figure>
       <div class="p-6 lg:w-3/5">
@@ -24,7 +23,7 @@ defineProps({
 
         <NuxtLink
           :to="{
-            path: post._path,
+            path: post._path as string,
           }"
           class="clay-effect inline-flex w-fit items-center rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black no-underline hover:bg-accent/75 focus:outline-none"
           >Read more
