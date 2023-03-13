@@ -1,10 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-icon', '@nuxtjs/tailwindcss', 'nuxt-simple-sitemap'],
-
-  sitemap: {
-    hostname: 'https://rafamed.dev',
-  },
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-simple-sitemap'],
 
   content: {
     highlight: {
@@ -13,9 +9,15 @@ export default defineNuxtConfig({
     },
   },
 
-  // nitro: {
-  //   prerender: {
-  //     routes: ['/sitemap.xml'],
-  //   },
-  // },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml'],
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://rafamed.dev',
+    },
+  },
 });
