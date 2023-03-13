@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'nuxt-simple-sitemap'],
 
+  css: ['~/assets/css/tailwind.css'],
+
   content: {
     highlight: {
       theme: 'dracula',
