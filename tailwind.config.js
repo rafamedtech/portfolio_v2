@@ -9,11 +9,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(189,147,249)',
-        secondary: '#8be9fd',
-        accent: '#50fa7b',
+        primary: '#647eff',
+        // primary: 'rgb(189,147,249)',
+        secondary: '#aac8e4',
+        // secondary: '#8be9fd',
+        accent: '#00dc82',
         light: 'rgb(248,248,242)',
-        custom: '#282a36',
+        custom: '#1a1a1a',
+        // custom: '#282a36',
       },
       container: {
         center: true,

@@ -7,11 +7,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="p-4">
+  <div class="">
     <div class="flex h-full flex-col items-center md:flex-row md:gap-8">
       <figure class="flex h-full w-full items-center lg:w-2/5">
         <img
-          class="clay-effect h-60 w-full rounded-[2.5rem] object-cover object-center p-4"
+          class="clay-effect h-60 w-full rounded-[2rem] object-cover object-center p-4"
           :src="post.img"
           :alt="post.title"
         />

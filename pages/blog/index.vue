@@ -23,7 +23,7 @@ definePageMeta({
 <template>
   <section class="hero-pattern">
     <div class="container mx-auto px-5 pt-40 pb-24">
-      <h2 class="text-center text-3xl font-medium text-secondary sm:text-4xl">
+      <h2 class="text-center text-3xl font-medium text-accent sm:text-4xl">
         Here is my blog about web development
       </h2>
 

@@ -2,10 +2,6 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
 export const usePost = async () => {
   const { slug } = useRoute().params;
-  // const posts = ref<ParsedContent[]>([]);
-  // const { data: posts } = await useAsyncData('allPosts', () =>
-  //   queryContent<ParsedContent>('blog').sort({ id: -1 }).find()
-  // );
 
   const posts = await queryContent<ParsedContent>('blog').sort({ id: -1 }).find();
 

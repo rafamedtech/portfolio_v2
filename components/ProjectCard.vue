@@ -11,7 +11,7 @@ defineProps({
   <div class="p-4 md:w-1/3">
     <div class="h-full overflow-hidden">
       <img
-        class="clay-effect rounded-[2.5rem] object-cover object-center p-4 md:h-36 lg:h-48"
+        class="clay-effect rounded-[2rem] object-cover object-center p-4 md:h-36 lg:h-48"
         :src="project.img"
         alt="blog"
       />
