@@ -29,8 +29,8 @@ definePageMeta({
         @click="$router.push('/blog')"
         class="flex items-center gap-2 rounded-lg border-0 bg-primary py-2 px-2 text-base text-black hover:bg-primary/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
       >
-    </button>
-    <!-- <Icon name="heroicons-solid:arrow-left" /> Back to Blog -->
+        <Icon name="heroicons-solid:arrow-left" /> Back to Blog
+      </button>
 
       <!-- Post content -->
 
