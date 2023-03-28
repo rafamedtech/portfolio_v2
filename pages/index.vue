@@ -16,10 +16,7 @@ const stack = ref<Stack[]>([
     name: 'TailwindCSS',
     icon: 'mdi:tailwind',
   },
-  {
-    name: 'Vitest',
-    icon: 'simple-icons:vitest',
-  },
+
   {
     name: 'Typescript',
     icon: 'mdi:language-typescript',
@@ -31,6 +28,10 @@ const stack = ref<Stack[]>([
   {
     name: 'Nuxtjs',
     icon: 'mdi:nuxt',
+  },
+  {
+    name: 'Vitest',
+    icon: 'simple-icons:vitest',
   },
   {
     name: 'Supabase',
@@ -90,18 +91,18 @@ definePageMeta({
           <p class="mb-8 text-2xl leading-5 text-light">Freelance software developer</p>
 
           <div class="flex justify-center">
-            <nuxt-link
+            <NuxtLink
               to="/contact"
               class="clay-effect inline-flex rounded-xl border-0 bg-accent py-2 px-6 text-lg text-black hover:bg-accent/75 focus:outline-none"
             >
               Contact me!
-            </nuxt-link>
-            <nuxt-link
+            </NuxtLink>
+            <NuxtLink
               to="/projects"
-              class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-primary hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
+              class="hover:clay-effect ml-4 inline-flex rounded-xl border border-accent py-2 px-6 text-lg text-light hover:border-transparent hover:bg-accent/75 hover:text-black focus:outline-none"
             >
               See my work
-            </nuxt-link>
+            </NuxtLink>
           </div>
         </div>
       </div>

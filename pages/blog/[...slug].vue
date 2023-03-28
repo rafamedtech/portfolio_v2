@@ -1,16 +1,6 @@
 <script setup lang="ts">
-// console.log(slug[0].toString());
-
-// const route = useRoute();
-
 // Similar posts
-const { currentPost, similarPosts } = await usePost();
-// console.log(posts);
-
-// const currentPost = posts.find((post: ParsedContent) => post.slug === slug[0]);
-
-console.log(currentPost);
-// console.log(route.params);
+const { similarPosts } = await usePost();
 
 definePageMeta({
   pageTransition: {
