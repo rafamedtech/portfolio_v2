@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full md:w-1/2 lg:px-8">
     <form
       action="https://formsubmit.co/c6f524a15dd2e0cad5dd509cbb4f11ee"
       method="POST"

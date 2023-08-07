@@ -38,8 +38,8 @@ const stack = ref<Stack[]>([
     icon: 'simple-icons:supabase',
   },
   {
-    name: 'Django',
-    icon: 'simple-icons:django',
+    name: 'Prisma',
+    icon: 'vscode-icons:file-type-prisma',
   },
   {
     name: 'Netlify',
@@ -76,7 +76,7 @@ definePageMeta({
         class="container mx-auto flex flex-col items-center px-5 pt-48 pb-24 md:flex-row-reverse"
       >
         <div
-          class="animate__animated animate__fadeInRight mb-10 w-5/6 md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24"
+          class="mb-10 w-5/6 animate-fade-left animate-duration-1000 animate-once animate-ease-out md:mb-0 md:w-1/2 md:pr-16 lg:w-full lg:max-w-lg lg:pr-24"
         >
           <img
             class="w-full rounded object-cover object-center"
@@ -85,7 +85,7 @@ definePageMeta({
           />
         </div>
         <div
-          class="animate__animated animate__fadeInUp flex flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
+          class="flex animate-fade-up flex-col items-center text-center animate-duration-1000 animate-once animate-ease-out md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24"
         >
           <h2 class="tagline mb-4 text-5xl font-black text-primary sm:text-7xl">Hi, I'm Rafael</h2>
           <p class="mb-8 text-2xl leading-5 text-light">Freelance software developer</p>
@@ -119,8 +119,9 @@ definePageMeta({
             Few words about me
           </h2>
           <p class="mb-8 text-center text-base leading-relaxed text-light md:text-left xl:text-lg">
-            Technology is my passion, I love creating websites and Web Apps and I also enjoy sharing
-            what I just learned with everyone.
+            Technology is my passion, I love creating websites and Web Apps with the vue ecosystem
+            <Icon name="logos:vue" class="h-12 w-8 p-2" /> and I also enjoy sharing what I just
+            learned with everyone.
           </p>
         </div>
       </div>
@@ -161,7 +162,7 @@ definePageMeta({
           Here is some of my work
         </h2>
 
-        <div class="mt-4 flex flex-wrap pt-6">
+        <div class="mt-4 flex h-full min-h-max flex-wrap pt-6">
           <ProjectCard v-for="(project, index) in projects" :key="index" :project="project" />
         </div>
       </div>
@@ -191,7 +192,7 @@ definePageMeta({
           <figure class="md:w-1/3">
             <img src="@/assets/image/contact.png" alt="" />
           </figure>
-          <ContactForm class="md:w-2/5" />
+          <ContactForm />
         </div>
       </div>
     </section>

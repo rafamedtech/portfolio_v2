@@ -5,7 +5,7 @@ import 'animate.css';
 <template>
   <header class="my-shadow fixed z-50 w-screen bg-custom">
     <div
-      class="nav-container animate__animated animate__fadeInDown container mx-auto flex flex-col flex-wrap items-center p-5 transition-all duration-300 md:flex-row"
+      class="nav-container container mx-auto flex animate-fade-down flex-col flex-wrap items-center p-5 transition-all duration-300 animate-duration-1000 animate-once animate-ease-out md:flex-row"
     >
       <nuxt-link to="/" class="mb-4 flex items-center font-medium text-gray-900 md:mb-0">
         <svg
@@ -20,7 +20,7 @@ import 'animate.css';
         <!-- <Icon name="logos:vue" class="h-12 w-12 p-2" /> -->
         <!-- <Icon name="logos:nuxt-icon" class="h-12 w-12 p-2" /> -->
 
-        <span class="logo ml-3 text-3xl text-white">Rafamed</span>
+        <span class="logo ml-3 text-3xl text-primary">Rafamed</span>
       </nuxt-link>
       <nav
         class="relative flex flex-wrap items-center justify-center gap-4 text-base md:ml-auto md:mr-4 md:border-gray-400 md:py-1 md:pl-4"
