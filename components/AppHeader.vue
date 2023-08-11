@@ -1,7 +1,3 @@
-<script setup>
-import 'animate.css';
-</script>
-
 <template>
   <header class="my-shadow fixed z-50 w-screen bg-custom">
     <div
