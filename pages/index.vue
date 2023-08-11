@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import 'animate.css';
 
 interface Stack {
   name: string;
