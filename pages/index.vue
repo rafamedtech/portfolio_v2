@@ -118,7 +118,7 @@ definePageMeta({
             Few words about me
           </h2>
           <p class="mb-8 text-center text-base leading-relaxed text-light md:text-left xl:text-lg">
-            Technology is my passion, I love creating websites and Web Apps with the vue ecosystem
+            I love creating websites and Web Apps with the vue ecosystem
             <Icon name="logos:vue" class="h-12 w-8 p-2" /> and I also enjoy sharing what I just
             learned with everyone.
           </p>
