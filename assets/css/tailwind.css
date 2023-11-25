@@ -84,10 +84,10 @@
     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
   }
 
-  .project-content img,
+  /* .project-content img,
   .post-content img {
-    /* @apply mx-auto rounded-2xl md:h-[500px]; */
-  }
+    @apply mx-auto rounded-2xl md:h-[500px];
+  } */
 }
 
 .fade-enter-from {

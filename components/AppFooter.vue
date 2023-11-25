@@ -12,7 +12,7 @@
           />
         </svg>
 
-        <span class="logo ml-3 text-3xl text-primary">Rafamed</span>
+        <span class="logo ml-3 text-3xl text-light">Rafamed</span>
       </nuxt-link>
       <p
         class="mt-4 text-sm text-light sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4"

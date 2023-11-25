@@ -16,7 +16,7 @@
         <!-- <Icon name="logos:vue" class="h-12 w-12 p-2" /> -->
         <!-- <Icon name="logos:nuxt-icon" class="h-12 w-12 p-2" /> -->
 
-        <span class="logo ml-3 text-3xl text-primary">Rafamed</span>
+        <span class="logo ml-3 text-3xl text-light">Rafamed</span>
       </nuxt-link>
       <nav
         class="relative flex flex-wrap items-center justify-center gap-4 text-base md:ml-auto md:mr-4 md:border-gray-400 md:py-1 md:pl-4"
