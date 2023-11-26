@@ -53,7 +53,7 @@ definePageMeta({
 
     <!-- Related posts -->
     <section v-if="similarPosts?.length" class="container">
-      <h2 class="mb-0 text-center text-3xl font-medium text-accent sm:text-4xl">Related posts</h2>
+      <h2 class="text-center text-3xl font-medium text-accent sm:text-4xl">Related posts</h2>
 
       <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />
     </section>

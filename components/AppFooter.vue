@@ -17,7 +17,7 @@
       <p
         class="mt-4 text-sm text-light sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4"
       >
-        © 2023 Rafamed —
+        © {{ new Date().getFullYear() }} Rafamed —
         <nuxt-link
           href="https://twitter.com/rafamed_dev"
           class="ml-1 text-secondary"

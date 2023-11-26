@@ -11,7 +11,7 @@ defineProps<{
     :to="{
             path: post._path as string,
           }"
-    class="group w-full rounded-3xl border border-transparent bg-transparent transition-all hover:border-accent hover:bg-accent/10"
+    class="group block w-full rounded-3xl border border-transparent bg-transparent transition-all hover:border-accent hover:bg-accent/10"
   >
     <div class="flex h-full flex-col items-center md:flex-row md:gap-8">
       <figure class="flex h-60 w-full items-center md:h-40 md:w-1/3 lg:h-60 lg:w-2/5">
